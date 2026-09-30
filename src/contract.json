@@ -1,0 +1,77 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "AlreadyRegistered",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "EmptyFingerprint",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "fingerprint",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "registrant",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "registeredAt",
+          "type": "uint256"
+        }
+      ],
+      "name": "FingerprintRegistered",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "records",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "registrant",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "registeredAt",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "fingerprint",
+          "type": "bytes32"
+        }
+      ],
+      "name": "register",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506101c6806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c806301e647251461003b578063e1fa8e8414610091575b600080fd5b61006e610049366004610177565b600060208190529081526040902080546001909101546001600160a01b039091169082565b604080516001600160a01b03909316835260208301919091520160405180910390f35b6100a461009f366004610177565b6100a6565b005b806100c4576040516341f975c960e11b815260040160405180910390fd5b6000818152602081905260409020546001600160a01b0316156100fa57604051630ea075bf60e21b815260040160405180910390fd5b604080518082018252338082524260208084018281526000878152808352869020945185546001600160a01b0319166001600160a01b039091161785555160019094019390935592519283529183917fe585bb20f63670939ded7a202b1116f7b91ef6443df12af6597c9c2407fa7ed1910160405180910390a350565b60006020828403121561018957600080fd5b503591905056fea264697066735822122051b2edef1b182f519740b0a552657a757aa4f267be0412965c235979c56294a164736f6c63430008140033"
+}

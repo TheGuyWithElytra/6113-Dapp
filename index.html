@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-Hans"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#101827"><meta name="description" content="在本机计算文件 SHA-256 指纹，并在 Sepolia 区块链登记和验证。"><link rel="icon" href="/favicon.svg"><title>文件指纹 · File Fingerprint</title></head>
+<body><main>
+<header><a class="brand" href="/"><span class="mark">F</span> FILE FINGERPRINT</a><span class="network-pill">Sepolia 测试网</span></header>
+<div class="heading"><p class="eyebrow">文件留在本机 · 指纹登记上链</p><h1>给文件留下<br>可验证的记录。</h1><p>选择文件，计算 SHA-256 指纹，登记或查询链上记录。</p></div>
+<div class="workspace">
+<section class="card"><div class="section-top"><span class="step">01</span><h2>钱包与登记合约</h2></div>
+<button id="connect" class="primary">连接钱包</button><div class="wallet-info"><span>钱包</span><strong id="wallet">未连接</strong></div><div class="wallet-info"><span>网络</span><strong id="network">未连接</strong></div><button id="switch" class="secondary" hidden>切换到 Sepolia</button><hr>
+<label for="address">登记合约地址</label><input id="address" placeholder="0x…" autocomplete="off" spellcheck="false"><p class="help">使用本 dapp 的 FileFingerprintRegistry 合约地址。查询记录必须使用同一个合约。</p><button id="load" class="secondary" disabled>加载合约</button>
+<details><summary>还没有登记合约？</summary><p class="help">首次使用可部署一个新合约。钱包会请求确认，并消耗 Sepolia 测试 ETH。</p><button id="deploy" class="secondary" disabled>部署登记合约</button></details>
+</section>
+<section class="card"><div class="section-top"><span class="step">02</span><h2>文件指纹</h2></div>
+<label for="file">选择文件（最大 50 MiB）</label><input id="file" type="file"><p id="file-info" class="help">文件内容与文件名都不会上传。任何类型的文件均可。</p>
+<label for="fingerprint">SHA-256 指纹</label><input id="fingerprint" placeholder="0x + 64 位十六进制，可粘贴已有指纹" autocomplete="off" spellcheck="false"><p class="help">修改文件的任何字节都会改变指纹；只改文件名不会。指纹也可以直接粘贴查询。</p>
+<button id="verify" class="secondary" disabled>查询链上记录</button><div id="record" class="record" aria-live="polite"><strong id="result">尚未查询</strong><dl id="record-details" hidden><dt>首次登记钱包</dt><dd><a id="registrant" target="_blank" rel="noopener noreferrer"></a></dd><dt>区块登记时间</dt><dd id="registered-at"></dd></dl></div>
+<button id="register" class="primary" disabled>注册文件指纹</button><p class="help">登记需要钱包确认。此合约中的同一指纹只能登记一次，首次记录不能修改。</p>
+</section></div>
+<div id="status" class="status" role="status" aria-live="polite">选择文件即可计算指纹；连接钱包并加载合约后可查询或登记。</div><a id="transaction" target="_blank" rel="noopener noreferrer" hidden>在 Etherscan 查看交易</a>
+<aside id="mobile-help"><div><strong>手机上使用</strong><p>在 MetaMask 内置浏览器中打开本页面，再连接钱包。</p></div><a id="open-wallet" class="secondary" href="https://metamask.io/download/">在 MetaMask 打开</a></aside>
+<footer>登记仅证明此指纹在此合约中被某钱包记录，不证明版权或所有权。链上指纹、钱包与时间公开可见。</footer>
+</main><script type="module" src="/src/app.js"></script></body></html>

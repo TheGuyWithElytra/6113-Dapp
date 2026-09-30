@@ -1,0 +1,2 @@
+{"name":"file-fingerprint-registry","private":true,"version":"1.0.0","type":"module","scripts":{"dev":"vite --host 0.0.0.0","build":"node scripts/compile.mjs && vite build","preview":"vite preview --host 0.0.0.0","test":"node --test tests/*.test.mjs"},"dependencies":{"ethers":"6.15.0"},"devDependencies":{"vite":"6.3.6","solc":"0.8.20","ganache":"7.9.2","@playwright/test":"1.56.1"}}
+
