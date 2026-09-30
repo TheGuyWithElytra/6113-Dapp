@@ -13,19 +13,6 @@
 
 登记是此合约内的公开记录，不证明作者身份、版权或所有权，也不是全球唯一登记。所有设备必须使用同一个登记合约。修改文件字节会改变指纹，改名不会。文件上限 50 MiB，避免手机一次性读取过大文件。
 
-## GitHub 和 Render
-
-创建一个新的 GitHub 仓库 `file-fingerprint-dapp`，上传本文件夹内容（不要上传 node_modules 或 dist）。在 Render 选择 New → Static Site，连接新仓库：
-
-| 设置 | 值 |
-|---|---|
-| Branch | main |
-| Root Directory | 留空（本文件夹内容位于仓库根目录时） |
-| Build Command | npm ci && npm run build |
-| Publish Directory | dist |
-
-也可以通过 New → Blueprint 使用 render.yaml。无需环境变量或私钥。参考 https://render.com/docs/static-sites 。网站发布和区块链合约部署是两件事。
-
 ## 首次使用
 
 1. 在手机 MetaMask 的内置浏览器打开 Render HTTPS 地址。
